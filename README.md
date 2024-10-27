@@ -15,4 +15,10 @@ The generated artifacts from the pipeline after analysing is shown below
 2. [manhattan map image](./data/outputs/manhattan_map.png)
 3. [trips by week csv](./data//outputs/trips_by_week.csv)
 
+## Deployment
+This project on completion on my local machine (Dev environment) was hosted in [Dagster+](https://docs.dagster.io/dagster-plus), a cloud platform for production environment.  
+I configured CI/CD pipeline from this github repository to Dagster+.
+The materialization was tested in the production environment and it went smoothly.
+
+
 
