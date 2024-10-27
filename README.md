@@ -13,5 +13,6 @@ There are many benefits one gets from combining dagster with dbt. it includes bu
 The generated artifacts from the pipeline after analysing is shown below
 1. [airport trips chart](./data/outputs/airport_trips.png)
 2. [manhattan map image](./data/outputs/manhattan_map.png)
+3. [trips by week csv](./data//outputs/trips_by_week.csv)
 
 
