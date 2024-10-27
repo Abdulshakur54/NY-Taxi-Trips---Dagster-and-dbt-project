@@ -1,49 +1,18 @@
-## Dagster University: Dagster + dbt
+## Dagster - dbt New York Taxi Trips Project  
+In this project, I Orchestrated a dbt project using dagster.  
+By loading and connecting the dbt project with dagster, each dbt model maps to an asset in dagster
+I combined the assets from a previous [dagster project](https://github.com/Abdulshakur54/NY-Taxi-Trips-) with the ones from dbt project to make a robust pipeline [finished project in the dagster UI](https://drive.google.com/file/d/1uLf1xotQuXTHD21v-184-J_pPGD68RKf/view?usp=sharing).
 
-This is the **starter** version of the [Dagster](https://dagster.io/) project made to accompany Dagster University's [Dagster + dbt course](https://courses.dagster.io/courses/dagster-dbt).
+There are many benefits one gets from combining dagster with dbt. it includes but are not limited to the following    
+1. Orchestration of the dbt models   
+2. dbt only performs the "T" in the "ELT" process. combining with Dagster, Dagster handles the "EL" in the "ELT" process  
+3. Core dbt does not support ochestration, with dagster, You can ochestrate dbt jobs as pipelines
+4. dbt increemental runs aren’t repeatable. combining with dbt helps us to repeat incremental runs using dagster partitions
+5. dagster assets can be made an upstream for dbt models transformed assets and dbt assets can be used as upstream for dagster assets as well  
+  
+The generated artifacts from the pipeline after analysing is shown below
+1. [airport trips chart](./data/outputs/airport_trips.png)
+2. [manhattan map image](./data/outputs/manhattan_map.png)
+3. [trips by week csv](./data//outputs/trips_by_week.csv)
 
-> **Looking for the finished project for the Dagster + dbt course?** Use the [`module/dagster-and-dbt` branch](https://github.com/dagster-io/project-dagster-university/tree/module/dagster-and-dbt).
 
-## Getting started
-
-First, install your Dagster code location as a Python package. By using the --editable flag, pip will install your Python package in ["editable mode"](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs) so that as you develop, local code changes will automatically apply.
-
-```bash
-pip install -e ".[dev]"
-```
-
-Duplicate the `.env.example` file and rename it to `.env`. Then, fill in the values for the environment variables in the file.
-
-Then, start the Dagster UI web server:
-
-```bash
-dagster dev
-```
-
-Open http://localhost:3000 with your browser to see the project.
-
-## Development
-
-### Adding new Python dependencies
-
-You can specify new Python dependencies in `setup.py`.
-
-### Unit testing
-
-Tests are in the `dagster_university_tests` directory and you can run tests using `pytest`:
-
-```bash
-pytest dagster_university_tests
-```
-
-### Schedules and sensors
-
-If you want to enable Dagster [Schedules](https://docs.dagster.io/concepts/partitions-schedules-sensors/schedules) or [Sensors](https://docs.dagster.io/concepts/partitions-schedules-sensors/sensors) for your jobs, the [Dagster Daemon](https://docs.dagster.io/deployment/dagster-daemon) process must be running. This is done automatically when you run `dagster dev`.
-
-Once your Dagster Daemon is running, you can start turning on schedules and sensors for your jobs.
-
-## Deploy on Dagster Cloud
-
-The easiest way to deploy your Dagster project is to use Dagster Cloud.
-
-Check out the [Dagster Cloud Documentation](https://docs.dagster.cloud) to learn more.
